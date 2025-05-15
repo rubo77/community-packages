@@ -83,23 +83,7 @@ The site configuration provides the site-wide default configuration for usteer.
 
 To fully leverage the capabilities of the `ffda-gluon-usteer` package in your Gluon firmware, you can add the following usteer configuration block to your `site.conf` file:
 
-    usteer = {
-      max_signal_diff = 10,
-      min_signal = -75,
-      roam_trigger = -70,
-      signal_avg_weight = 0.5,
-      load_balancing = true,
-    }
-
-This configuration enables decentralized client steering, allowing clients to be automatically directed to the most suitable access point based on signal strength and load balancing considerations.
-
-If we want to maximize the functionality of **ffda-gluon-usteer**, we should consider the following options:
-
-- **Client Steering** based on signal strength and load balancing  
-- **Band Steering** between 2.4 GHz and 5 GHz  
-- **Network Monitoring and Updates**  
-
-```lua
+```
 usteer = {
   network = {
     enabled = true,
@@ -113,12 +97,5 @@ usteer = {
     min_snr = -60,
     interval = 20000,
   },
-  client_steering = {
-    max_signal_diff = 10,
-    min_signal = -75,
-    roam_trigger = -70,
-    signal_avg_weight = 0.5,
-    load_balancing = true,
-  }
 }
 
